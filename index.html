@@ -7,17 +7,22 @@
     <title>Calculadora</title>
     <link rel="stylesheet" href="main.css">
     <script>
-        var resultado = document.getElementById("resultado");
+        var tela = document.getElementById('resultado');
+        var resultado = 0;
+
         var AC = document.getElementById("bAC");
-        AC.addEventListener('Click', apagarTudo);
+        document.getElementById("bAC").addEventListener('Click', apagarTudo);
+        
         var mais = document.getElementById('bMais');
         mais.addEventListener('Click', funcMais);
+
         function apagarTudo(){
-            resultado.innerText = 'apagado';
+            tela.innerHTML = "<p>0</p>";
+            resultado = 0;
         }
         function funcMais(){
             resultado.innerText = `${resultado}+`;
-            resultado = `${resultado}+`
+            resultado = `${resultado}+`;
         }
 
     </script>
@@ -32,7 +37,7 @@
                 <p id="resultado">- - - -</p>
             </div>
             <div class="L1">
-                <input type="button" class="button" id="bAC" value="AC">
+                <div class="button" id="bAC">AC</div> 
                 <div class="button">DEL</div>
                 <div class="button">%</div>
                 <div class="button">/</div>
